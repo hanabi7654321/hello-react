@@ -21,11 +21,27 @@
         const url = this.getImageURL()
         const boxStyle = {
           border: "1px solid silver",
-          
-
+          margin: "8px",
+          paddin: "4px",
+          backgroundColor: "black",
+          color: "white"
         }
+        return (<div style={boxStyle}>
+            <img src={url} width="128"/>
+            <span> {label} </span>
+          </div>)
       }
     }
+    // コンポーネントを利用
+    const dom = <div>
+      <PhotoText image="pic11" label="真っ赤なトマト" />
+      <PhotoText image="pic12" label="美味しいトマト" />
+      <PhotoText image="pic13" label="トマトがいっぱい" />
+      <PhotoText image="pic14" label="トマトソースを作ろう" />
+    </div>
+    // ReactでDOMを書き換え
+    ReactDOM.render(dom,
+    document.getElementById('root'))
   </script>
 </body>
 </html>
