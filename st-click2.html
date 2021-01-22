@@ -14,9 +14,23 @@
       constructor (props) {
         super(props)
         // イベントハンドラーをthisで結びつける
-        
+        this.clickHandler = this.clickHandler.bind(this)
+      }
+      clickHandler (e) {
+        const name = this.props.name
+        window.alert(`こんにちは、${name}さん`)
+      }
+      render () {
+        // クリックイベントを指定
+        return (
+          <div onClick={this.clickHandler}>Click Me</div>
+        )
       }
     }
+    // コンポーネントを使う
+    ReactDOM.render(
+      <Hello name="花火"/>,
+      document.getElementById('root'))
   </script>
 </body>
 </html>
